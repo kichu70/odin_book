@@ -1,0 +1,20 @@
+current directory: C:/Users/ASUS/Desktop/Limenzy/own projects/Ruby on Rail/odin_book/vendor/bundle/ruby/3.4.0/gems/debug-1.11.1/ext/debug
+C:/Ruby34-x64/bin/ruby.exe extconf.rb
+creating Makefile
+
+current directory: C:/Users/ASUS/Desktop/Limenzy/own projects/Ruby on Rail/odin_book/vendor/bundle/ruby/3.4.0/gems/debug-1.11.1/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20260413-290076-ss9obg sitelibdir\=./.gem.20260413-290076-ss9obg clean
+
+current directory: C:/Users/ASUS/Desktop/Limenzy/own projects/Ruby on Rail/odin_book/vendor/bundle/ruby/3.4.0/gems/debug-1.11.1/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20260413-290076-ss9obg sitelibdir\=./.gem.20260413-290076-ss9obg
+generating debug-x64-mingw-ucrt.def
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.so
+
+current directory: C:/Users/ASUS/Desktop/Limenzy/own projects/Ruby on Rail/odin_book/vendor/bundle/ruby/3.4.0/gems/debug-1.11.1/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20260413-290076-ss9obg sitelibdir\=./.gem.20260413-290076-ss9obg install
+/usr/bin/install -c -m 0755 debug.so ./.gem.20260413-290076-ss9obg/debug
+
+current directory: C:/Users/ASUS/Desktop/Limenzy/own projects/Ruby on Rail/odin_book/vendor/bundle/ruby/3.4.0/gems/debug-1.11.1/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20260413-290076-ss9obg sitelibdir\=./.gem.20260413-290076-ss9obg clean
