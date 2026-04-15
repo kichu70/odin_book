@@ -1,0 +1,43 @@
+<div class="min-h-screen flex items-center justify-center bg-gray-100">
+  <div class="w-full max-w-md bg-white rounded-2xl shadow-lg p-8">
+    
+    <!-- Title -->
+    <h2 class="text-3xl font-bold text-center text-gray-800 mb-6">
+      Welcome Back 👋
+    </h2>
+
+    <!-- Form -->
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+      <!-- Email -->
+      <div class="mb-4">
+        <%= f.label :email, class: "block text-sm font-medium text-gray-700" %>
+        <%= f.email_field :email, autofocus: true,
+          class: "mt-1 w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none" %>
+      </div>
+
+      <!-- Password -->
+      <div class="mb-6">
+        <%= f.label :password, class: "block text-sm font-medium text-gray-700" %>
+        <%= f.password_field :password,
+          class: "mt-1 w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none" %>
+      </div>
+
+      <!-- Submit -->
+      <div class="mb-4">
+        <%= f.submit "Log In",
+          class: "w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-200" %>
+      </div>
+
+    <% end %>
+
+    <!-- Links -->
+    <div class="text-center text-sm text-gray-600">
+      Don’t have an account?
+      <%= link_to "Sign up",
+          new_user_registration_path,
+          class: "text-blue-600 hover:underline" %>
+    </div>
+
+  </div>
+</div>

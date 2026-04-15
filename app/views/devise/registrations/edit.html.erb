@@ -1,0 +1,60 @@
+<h2>Edit Profile</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.email_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.<h2 class="form-title">Edit Profile</h2>
+
+<div class="form-container">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name, placeholder: "Update your name" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :email %>
+      <%= f.email_field :email, placeholder: "Update your email" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password %>
+      <%= f.password_field :password, placeholder: "New password (optional)" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation, placeholder: "Confirm new password" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :current_password %>
+      <%= f.password_field :current_password, placeholder: "Enter current password" %>
+    </div>
+
+    <%= f.submit "Update Profile", class: "signup-btn" %>
+
+  <% end %>
+</div>label :password %>
+    <%= f.password_field :password %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+  </div>
+
+  <div class="field">
+    <%= f.label :current_password %>
+    <%= f.password_field :current_password %>
+  </div>
+
+  <%= f.submit "Update" %>
+
+<% end %>

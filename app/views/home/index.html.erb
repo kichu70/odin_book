@@ -1,2 +1,30 @@
-<h1>Home</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="home">
+
+  <!-- Left Section -->
+  <div class="home-left">
+    <h1>OdinBook</h1>
+    <p>Connect with friends and the world around you.</p>
+  </div>
+
+  <!-- Right Section -->
+  <div class="home-right">
+    <div class="login-box">
+
+      <% if user_signed_in? %>
+        <h2>Welcome</h2>
+        <p><%= current_user.email %></p>
+
+        <%= link_to "Go to Feed", posts_path, class: "login-btn" %>
+        <%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete }, class: "signup-btn" %>
+
+      <% else %>
+
+        <%= link_to "Log In", new_user_session_path, class: "login-btn" %>
+        <%= link_to "Create New Account", new_user_registration_path, class: "signup-btn" %>
+
+      <% end %>
+
+    </div>
+  </div>
+
+</div>
