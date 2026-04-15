@@ -1,30 +1,42 @@
-<div class="home">
+<div class="navbar">
+  <div class="logo">OdinBook</div>
 
-  <!-- Left Section -->
-  <div class="home-left">
+  <div class="nav-links">
+    <% if user_signed_in? %>
+      <span class="user-email"><%= current_user.email %></span>
+      <%= link_to "Feed", posts_path, class: "nav-btn" %>
+      <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "nav-btn logout" %>
+    <% else %>
+      <%= link_to "Login", new_user_session_path, class: "nav-btn" %>
+      <%= link_to "Sign Up", new_user_registration_path, class: "nav-btn signup" %>
+    <% end %>
+  </div>
+</div>
+<div class="main1">
+<div class="main-container">
+
+  <!-- LEFT -->
+  <div class="left-section">
     <h1>OdinBook</h1>
-    <p>Connect with friends and the world around you.</p>
+    <p>Share moments. Connect instantly. Explore freely.</p>
   </div>
 
-  <!-- Right Section -->
-  <div class="home-right">
-    <div class="login-box">
+  <!-- RIGHT -->
+  <div class="right-section">
+    <div class="card">
 
       <% if user_signed_in? %>
-        <h2>Welcome</h2>
+        <h2>Welcome Back 👋</h2>
         <p><%= current_user.email %></p>
-
-        <%= link_to "Go to Feed", posts_path, class: "login-btn" %>
-        <%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete }, class: "signup-btn" %>
-
+        <%= link_to "Go to Feed", posts_path, class: "btn primary" %>
       <% else %>
-
-        <%= link_to "Log In", new_user_session_path, class: "login-btn" %>
-        <%= link_to "Create New Account", new_user_registration_path, class: "signup-btn" %>
-
+        <h2>Join OdinBook</h2>
+        <%= link_to "Log In", new_user_session_path, class: "btn primary" %>
+        <%= link_to "Create Account", new_user_registration_path, class: "btn secondary" %>
       <% end %>
 
     </div>
   </div>
 
+</div>
 </div>
