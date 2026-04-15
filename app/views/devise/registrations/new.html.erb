@@ -1,9 +1,4 @@
-<h2>Register</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-
-  <div class="field">
-    <%= <h2 class="form-title">Create Account</h2>
+<h2 class="form-title">Create Account</h2>
 
 <div class="form-container">
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -31,20 +26,4 @@
     <%= f.submit "Register", class: "signup-btn" %>
 
   <% end %>
-</div>f.label :email %>
-    <%= f.email_field :email %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
-  </div>
-
-  <%= f.submit "Register", class: "signup-btn" %>
-
-<% end %>
+</div>

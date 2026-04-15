@@ -1,43 +1,30 @@
-<div class="min-h-screen flex items-center justify-center bg-gray-100">
-  <div class="w-full max-w-md bg-white rounded-2xl shadow-lg p-8">
-    
-    <!-- Title -->
-    <h2 class="text-3xl font-bold text-center text-gray-800 mb-6">
-      Welcome Back 👋
-    </h2>
+<div class="login-page">
+  <div class="login-card">
 
-    <!-- Form -->
+    <h2 class="login-title">Welcome Back 👋</h2>
+
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-      <!-- Email -->
-      <div class="mb-4">
-        <%= f.label :email, class: "block text-sm font-medium text-gray-700" %>
-        <%= f.email_field :email, autofocus: true,
-          class: "mt-1 w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none" %>
+      <div class="form-group">
+        <%= f.label :email %>
+        <%= f.email_field :email, autofocus: true, class: "input-field" %>
       </div>
 
-      <!-- Password -->
-      <div class="mb-6">
-        <%= f.label :password, class: "block text-sm font-medium text-gray-700" %>
-        <%= f.password_field :password,
-          class: "mt-1 w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none" %>
+      <div class="form-group">
+        <%= f.label :password %>
+        <%= f.password_field :password, class: "input-field" %>
       </div>
 
-      <!-- Submit -->
-      <div class="mb-4">
-        <%= f.submit "Log In",
-          class: "w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-200" %>
+      <div class="form-group">
+        <%= f.submit "Log In", class: "btn-primary" %>
       </div>
 
     <% end %>
 
-    <!-- Links -->
-    <div class="text-center text-sm text-gray-600">
+    <p class="signup-text">
       Don’t have an account?
-      <%= link_to "Sign up",
-          new_user_registration_path,
-          class: "text-blue-600 hover:underline" %>
-    </div>
+      <%= link_to "Sign up", new_user_registration_path %>
+    </p>
 
   </div>
 </div>
