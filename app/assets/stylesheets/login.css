@@ -9,6 +9,7 @@ max-width: 1400px;
   background: linear-gradient(135deg, #0f172a, #1e293b);
   font-family: 'Poppins', sans-serif;
   margin: auto;
+  color: #000;
 }
 
 /* ================= CARD ================= */

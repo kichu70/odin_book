@@ -1,11 +1,151 @@
-/*
- * This is a manifest file that'll be compiled into application.css.
- *
- * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
- * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
- * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
- * depending on specificity.
- *
- * Consider organizing styles into separate files for maintainability.
- */
+body {
+  background: #f4f6f8;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #1f2937;
+}
 
+/* ===== PAGE WRAPPER ===== */
+.post-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* ===== GLASS CARD ===== */
+.post-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  padding: 28px;
+  width: 420px;
+  border-radius: 16px;
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  transition: 0.3s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-4px);
+}
+
+/* ===== TITLE ===== */
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* ===== FORM ===== */
+.post-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== FORM GROUP ===== */
+.form-group {
+  margin-bottom: 15px;
+}
+
+/* ===== LABEL ===== */
+.label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+  color: #374151;
+}
+
+/* ===== INPUT FIELDS ===== */
+.input,
+.textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  outline: none;
+  transition: 0.2s ease;
+  background: #fff;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: #3aafa9;
+  box-shadow: 0 0 0 3px rgba(58, 175, 169, 0.2);
+}
+
+.textarea {
+  height: 130px;
+  resize: none;
+}
+
+/* ===== BUTTON ===== */
+.btn {
+  background: linear-gradient(135deg, #3aafa9, #2b7a78);
+  color: white;
+  padding: 11px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.25s ease;
+}
+
+.btn:hover {
+  transform: scale(1.02);
+  opacity: 0.95;
+}
+
+/* ===== POST LIST (INDEX PAGE SUPPORT) ===== */
+.post-list {
+  max-width: 700px;
+  margin: auto;
+  padding: 20px;
+}
+
+.post-item {
+  background: white;
+  padding: 18px;
+  margin-bottom: 15px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  transition: 0.2s ease;
+}
+
+.post-item:hover {
+  transform: translateY(-3px);
+}
+
+.post-item h2 {
+  margin: 0 0 8px;
+  font-size: 20px;
+}
+
+.post-item p {
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+.post-item small {
+  display: block;
+  margin-top: 8px;
+  color: #6b7280;
+}
+
+.post-item a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #3aafa9;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.post-item a:hover {
+  text-decoration: underline;
+}

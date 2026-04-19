@@ -13,6 +13,8 @@ body {
   /* background-color: #22c55e; */
   margin: auto;
   max-width: 1400px;
+  width: fit-content;
+
 }
 
 /* ================= BODY ANIMATION ================= */
@@ -93,6 +95,8 @@ body {
   justify-content: center;
   align-items: center;
   padding-top: 60px;
+  margin: auto;
+  max-width: 1400px;
 }
 
 .main-container {

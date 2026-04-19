@@ -29,6 +29,7 @@
         <h2>Welcome Back 👋</h2>
         <p><%= current_user.email %></p>
         <%= link_to "Go to Feed", posts_path, class: "btn primary" %>
+        <%= link_to "➕ Create Post", new_post_path %>
       <% else %>
         <h2>Join OdinBook</h2>
         <%= link_to "Log In", new_user_session_path, class: "btn primary" %>
