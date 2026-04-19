@@ -1,3 +1,7 @@
+/* ===================================== */
+/* BASE PAGE */
+/* ===================================== */
+
 body {
   background: #f4f6f8;
   font-family: Arial, sans-serif;
@@ -6,7 +10,10 @@ body {
   color: #1f2937;
 }
 
-/* ===== PAGE WRAPPER ===== */
+/* ===================================== */
+/* CREATE POST PAGE */
+/* ===================================== */
+
 .post-page {
   display: flex;
   justify-content: center;
@@ -15,14 +22,14 @@ body {
   padding: 20px;
 }
 
-/* ===== GLASS CARD ===== */
 .post-card {
+  color: #000;
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
 
   padding: 28px;
-  width: 420px;
+  /* width: 420px; */
   border-radius: 16px;
 
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
@@ -35,26 +42,23 @@ body {
   transform: translateY(-4px);
 }
 
-/* ===== TITLE ===== */
 .title {
   text-align: center;
   margin-bottom: 20px;
   font-size: 22px;
   font-weight: bold;
+  color: #2b7a78;
 }
 
-/* ===== FORM ===== */
 .post-form {
   display: flex;
   flex-direction: column;
 }
 
-/* ===== FORM GROUP ===== */
 .form-group {
   margin-bottom: 15px;
 }
 
-/* ===== LABEL ===== */
 .label {
   font-weight: 600;
   margin-bottom: 6px;
@@ -62,7 +66,6 @@ body {
   color: #374151;
 }
 
-/* ===== INPUT FIELDS ===== */
 .input,
 .textarea {
   width: 100%;
@@ -85,7 +88,6 @@ body {
   resize: none;
 }
 
-/* ===== BUTTON ===== */
 .btn {
   background: linear-gradient(135deg, #3aafa9, #2b7a78);
   color: white;
@@ -94,58 +96,146 @@ body {
   border-radius: 10px;
   cursor: pointer;
   font-weight: 600;
-  transition: 0.25s ease;
 }
 
 .btn:hover {
-  transform: scale(1.02);
   opacity: 0.95;
 }
 
-/* ===== POST LIST (INDEX PAGE SUPPORT) ===== */
-.post-list {
-  max-width: 700px;
+/* ===================================== */
+/* POSTS INDEX PAGE */
+/* ===================================== */
+
+.posts-container {
+  width: 95%;
+  max-width: 1600px;
   margin: auto;
-  padding: 20px;
+  padding: 30px 20px;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 in one row */
+  gap: 22px;
 }
 
 .post-item {
   background: white;
   padding: 18px;
-  margin-bottom: 15px;
-  border-radius: 14px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-  transition: 0.2s ease;
+  border-radius: 16px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+  transition: 0.25s ease;
 }
 
 .post-item:hover {
-  transform: translateY(-3px);
+  transform: translateY(-5px);
 }
 
 .post-item h2 {
-  margin: 0 0 8px;
+  margin: 0 0 10px;
   font-size: 20px;
+  color: #111827;
 }
 
 .post-item p {
   color: #4b5563;
-  line-height: 1.5;
+  line-height: 1.6;
+  margin-bottom: 12px;
 }
 
 .post-item small {
   display: block;
-  margin-top: 8px;
+  margin-bottom: 14px;
   color: #6b7280;
 }
 
-.post-item a {
-  display: inline-block;
-  margin-top: 10px;
-  color: #3aafa9;
-  font-weight: 600;
-  text-decoration: none;
+/* ===================================== */
+/* LIKE + COMMENT */
+/* ===================================== */
+
+.post-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
 }
 
-.post-item a:hover {
-  text-decoration: underline;
+.like-btn {
+  background: #3aafa9;
+  color: white;
+  border: none;
+  padding: 9px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.like-btn:hover {
+  background: #2b7a78;
+}
+
+.comments-box {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 14px;
+}
+
+.comments-box h4 {
+  margin: 0 0 10px;
+  font-size: 15px;
+}
+
+.comment-item {
+  background: #f9fafb;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.comment-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  outline: none;
+  margin-top: 8px;
+}
+
+.comment-input:focus {
+  border-color: #3aafa9;
+}
+
+.comment-btn {
+  width: 100%;
+  margin-top: 10px;
+  background: #2b7a78;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.comment-btn:hover {
+  background: #256b69;
+}
+
+/* ===================================== */
+/* RESPONSIVE GRID */
+/* ===================================== */
+
+@media (max-width: 1200px) {
+  .posts-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .posts-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .posts-container {
+    grid-template-columns: 1fr;
+  }
 }

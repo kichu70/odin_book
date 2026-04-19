@@ -1,18 +1,70 @@
-<div class="post-list">
+<!-- app/views/posts/index.html.erb -->
+
+<div class="posts-container">
 
   <% @posts.each do |post| %>
 
-    <div class="post-item">
+    <div class="post-card">
 
-      <h2><%= post.title %></h2>
+      <div class="post-header">
+        <div class="avatar">
+          <%= post.user.email.first.upcase %>
+        </div>
 
-      <p><%= post.content %></p>
+        <div class="user-info">
+          <h3><%= post.user.email.split("@").first %></h3>
+          <small><%= post.user.email %></small>
+        </div>
+      </div>
 
-      <small>By: <%= post.user.email %></small>
+      <div class="post-body">
+        <h2><%= post.title %></h2>
+        <p><%= post.content %></p>
+      </div>
 
-      <br>
+      <!-- Like -->
+      <div class="post-actions">
+        <%= button_to "❤️ Like", post_likes_path(post), method: :post, class: "like-btn" %>
 
-      <%= link_to "View", post_path(post) %>
+        <span class="like-count">
+          <%= post.likes.count %> Likes
+        </span>
+      </div>
+
+      <!-- Comments -->
+      <div class="comments-box">
+        <h4>Comments</h4>
+
+        <!-- Show only 3 comments -->
+        <% post.comments.limit(3).each do |comment| %>
+          <div class="comment-item">
+            <strong><%= comment.user.email.split("@").first if comment.user %></strong>
+            <span><%= comment.content %></span>
+          </div>
+        <% end %>
+
+        <!-- View All Comments -->
+        <% if post.comments.count > 3 %>
+          <details class="view-comments">
+            <summary>View all comments (<%= post.comments.count %>)</summary>
+
+            <% post.comments.offset(3).each do |comment| %>
+              <div class="comment-item">
+                <strong><%= comment.user.email.split("@").first if comment.user %></strong>
+                <span><%= comment.content %></span>
+              </div>
+            <% end %>
+
+          </details>
+        <% end %>
+
+        <!-- Add Comment -->
+        <%= form_with model: [post, Comment.new], local: true do |f| %>
+          <%= f.text_field :content, placeholder: "Write comment...", class: "comment-input" %>
+          <%= f.submit "Send", class: "comment-btn" %>
+        <% end %>
+
+      </div>
 
     </div>
 

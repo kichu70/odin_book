@@ -14,5 +14,8 @@ devise_for :users, path_names: {
   root "home#index"
 
 
-  resources :posts
+   resources :posts do
+    resources :likes, only: [:create]
+    resources :comments, only: [:create]
+  end
 end
