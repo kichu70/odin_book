@@ -11,7 +11,10 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[8.1].define(version: 2026_04_16_060001) do
-  create_table "comments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "pg_catalog.plpgsql"
+
+  create_table "comments", force: :cascade do |t|
     t.text "content"
     t.datetime "created_at", null: false
     t.bigint "post_id", null: false
@@ -21,7 +24,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_04_16_060001) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "friendships", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "friendships", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.bigint "friend_id", null: false
     t.string "status"
@@ -31,7 +34,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_04_16_060001) do
     t.index ["user_id"], name: "index_friendships_on_user_id"
   end
 
-  create_table "likes", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "likes", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.bigint "post_id", null: false
     t.datetime "updated_at", null: false
@@ -40,7 +43,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_04_16_060001) do
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
-  create_table "messages", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "messages", force: :cascade do |t|
     t.text "content"
     t.datetime "created_at", null: false
     t.bigint "receiver_id", null: false
@@ -50,7 +53,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_04_16_060001) do
     t.index ["sender_id"], name: "index_messages_on_sender_id"
   end
 
-  create_table "notifications", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "notifications", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.string "message"
     t.boolean "read"
@@ -59,7 +62,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_04_16_060001) do
     t.index ["user_id"], name: "index_notifications_on_user_id"
   end
 
-  create_table "posts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "posts", force: :cascade do |t|
     t.text "content"
     t.datetime "created_at", null: false
     t.string "title"
@@ -68,7 +71,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_04_16_060001) do
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
-  create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.string "email"
     t.string "encrypted_password"

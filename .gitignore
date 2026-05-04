@@ -10,6 +10,7 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+.env
 
 # Ignore pid files
 /tmp/pids/*
